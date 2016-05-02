@@ -1,0 +1,14 @@
+Spark Command: /Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home/bin/java -cp /Users/zengdan/spark-1.5.1/sbin/../conf/:/Users/zengdan/spark-1.5.1/assembly/target/scala-2.10/spark-assembly-1.5.1-hadoop2.2.0.jar:/Users/zengdan/spark-1.5.1/lib_managed/jars/datanucleus-api-jdo-3.2.6.jar:/Users/zengdan/spark-1.5.1/lib_managed/jars/datanucleus-core-3.2.10.jar:/Users/zengdan/spark-1.5.1/lib_managed/jars/datanucleus-rdbms-3.2.9.jar -Xms1g -Xmx1g -XX:MaxPermSize=256m org.apache.spark.deploy.history.HistoryServer
+========================================
+Exception in thread "main" java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at org.apache.spark.deploy.history.HistoryServer$.main(HistoryServer.scala:233)
+	at org.apache.spark.deploy.history.HistoryServer.main(HistoryServer.scala)
+Caused by: java.lang.IllegalArgumentException: Log directory specified does not exist: file:/tmp/spark-events. Did you configure the correct one through spark.history.fs.logDirectory?
+	at org.apache.spark.deploy.history.FsHistoryProvider.initialize(FsHistoryProvider.scala:119)
+	at org.apache.spark.deploy.history.FsHistoryProvider.<init>(FsHistoryProvider.scala:109)
+	at org.apache.spark.deploy.history.FsHistoryProvider.<init>(FsHistoryProvider.scala:47)
+	... 6 more

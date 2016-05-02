@@ -1,0 +1,643 @@
+Spark Command: /Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home/jre/bin/java -cp /Users/zengdan/spark-1.5.1/sbin/../conf/:/Users/zengdan/spark-1.5.1/assembly/target/scala-2.10/spark-assembly-1.5.1-hadoop2.2.0.jar:/Users/zengdan/spark-1.5.1/lib_managed/jars/datanucleus-api-jdo-3.2.6.jar:/Users/zengdan/spark-1.5.1/lib_managed/jars/datanucleus-core-3.2.10.jar:/Users/zengdan/spark-1.5.1/lib_managed/jars/datanucleus-rdbms-3.2.9.jar -Xms1g -Xmx1g -XX:MaxPermSize=256m org.apache.spark.deploy.worker.Worker --webui-port 8081 spark://ZengDandeMacBook-Air.local:7077
+========================================
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+16/04/17 13:32:50 INFO Worker: Registered signal handlers for [TERM, HUP, INT]
+16/04/17 13:32:51 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16/04/17 13:32:51 INFO SecurityManager: Changing view acls to: zengdan
+16/04/17 13:32:51 INFO SecurityManager: Changing modify acls to: zengdan
+16/04/17 13:32:51 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(zengdan); users with modify permissions: Set(zengdan)
+16/04/17 13:32:52 INFO Slf4jLogger: Slf4jLogger started
+16/04/17 13:32:52 INFO Remoting: Starting remoting
+16/04/17 13:32:52 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkWorker@192.168.1.103:54513]
+16/04/17 13:32:52 INFO Utils: Successfully started service 'sparkWorker' on port 54513.
+16/04/17 13:32:52 INFO Worker: Starting Spark worker 192.168.1.103:54513 with 4 cores, 3.0 GB RAM
+16/04/17 13:32:52 INFO Worker: Running Spark version 1.5.1
+16/04/17 13:32:52 INFO Worker: Spark home: /Users/zengdan/spark-1.5.1
+16/04/17 13:32:52 INFO Utils: Successfully started service 'WorkerUI' on port 8081.
+16/04/17 13:32:52 INFO WorkerWebUI: Started WorkerWebUI at http://192.168.1.103:8081
+16/04/17 13:32:52 INFO Worker: Connecting to master ZengDandeMacBook-Air.local:7077...
+16/04/17 13:32:53 INFO Worker: Successfully registered with master spark://ZengDandeMacBook-Air.local:7077
+16/04/17 18:47:05 INFO Worker: ZengDandeMacBook-Air.local:7077 Disassociated !
+16/04/17 18:47:05 ERROR Worker: Connection to master failed! Waiting for master to reconnect...
+16/04/17 18:47:05 INFO Worker: Connecting to master ZengDandeMacBook-Air.local:7077...
+16/04/17 18:47:05 WARN ReliableDeliverySupervisor: Association with remote system [akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077] has failed, address is now gated for [5000] ms. Reason: [Disassociated] 
+16/04/17 18:47:05 INFO Worker: ZengDandeMacBook-Air.local:7077 Disassociated !
+16/04/17 18:47:05 ERROR Worker: Connection to master failed! Waiting for master to reconnect...
+16/04/17 18:47:05 INFO Worker: Not spawning another attempt to register with the master, since there is an attempt scheduled already.
+16/04/17 18:47:05 WARN Worker: Failed to connect to master ZengDandeMacBook-Air.local:7077
+akka.actor.ActorNotFound: Actor not found for: ActorSelection[Anchor(akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077/), Path(/user/Master)]
+	at akka.actor.ActorSelection$$anonfun$resolveOne$1.apply(ActorSelection.scala:65)
+	at akka.actor.ActorSelection$$anonfun$resolveOne$1.apply(ActorSelection.scala:63)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$Batch.run(BatchingExecutor.scala:73)
+	at akka.dispatch.ExecutionContexts$sameThreadExecutionContext$.unbatchedExecute(Future.scala:74)
+	at akka.dispatch.BatchingExecutor$class.execute(BatchingExecutor.scala:120)
+	at akka.dispatch.ExecutionContexts$sameThreadExecutionContext$.execute(Future.scala:73)
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248)
+	at akka.pattern.PromiseActorRef.$bang(AskSupport.scala:266)
+	at akka.actor.EmptyLocalActorRef.specialHandle(ActorRef.scala:533)
+	at akka.actor.DeadLetterActorRef.specialHandle(ActorRef.scala:569)
+	at akka.actor.DeadLetterActorRef.$bang(ActorRef.scala:559)
+	at akka.remote.RemoteActorRefProvider$RemoteDeadLetterActorRef.$bang(RemoteActorRefProvider.scala:87)
+	at akka.remote.ReliableDeliverySupervisor$$anonfun$gated$1.applyOrElse(Endpoint.scala:335)
+	at akka.actor.Actor$class.aroundReceive(Actor.scala:467)
+	at akka.remote.ReliableDeliverySupervisor.aroundReceive(Endpoint.scala:188)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:487)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:238)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:220)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+16/04/17 18:47:10 INFO Worker: Retrying connection to master (attempt # 1)
+16/04/17 18:47:10 INFO Worker: Connecting to master ZengDandeMacBook-Air.local:7077...
+16/04/17 18:47:10 WARN Worker: Failed to connect to master ZengDandeMacBook-Air.local:7077
+akka.actor.ActorNotFound: Actor not found for: ActorSelection[Anchor(akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077/), Path(/user/Master)]
+	at akka.actor.ActorSelection$$anonfun$resolveOne$1.apply(ActorSelection.scala:65)
+	at akka.actor.ActorSelection$$anonfun$resolveOne$1.apply(ActorSelection.scala:63)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$Batch.run(BatchingExecutor.scala:73)
+	at akka.dispatch.ExecutionContexts$sameThreadExecutionContext$.unbatchedExecute(Future.scala:74)
+	at akka.dispatch.BatchingExecutor$class.execute(BatchingExecutor.scala:120)
+	at akka.dispatch.ExecutionContexts$sameThreadExecutionContext$.execute(Future.scala:73)
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248)
+	at akka.pattern.PromiseActorRef.$bang(AskSupport.scala:266)
+	at akka.actor.EmptyLocalActorRef.specialHandle(ActorRef.scala:533)
+	at akka.actor.DeadLetterActorRef.specialHandle(ActorRef.scala:569)
+	at akka.actor.DeadLetterActorRef.$bang(ActorRef.scala:559)
+	at akka.remote.RemoteActorRefProvider$RemoteDeadLetterActorRef.$bang(RemoteActorRefProvider.scala:87)
+	at akka.remote.ReliableDeliverySupervisor$$anonfun$gated$1.applyOrElse(Endpoint.scala:335)
+	at akka.actor.Actor$class.aroundReceive(Actor.scala:467)
+	at akka.remote.ReliableDeliverySupervisor.aroundReceive(Endpoint.scala:188)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:487)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:238)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:220)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+16/04/17 18:47:15 INFO Worker: Retrying connection to master (attempt # 2)
+16/04/17 18:47:15 INFO Worker: Connecting to master ZengDandeMacBook-Air.local:7077...
+16/04/17 18:47:15 INFO Worker: ZengDandeMacBook-Air.local:7077 Disassociated !
+16/04/17 18:47:15 WARN ReliableDeliverySupervisor: Association with remote system [akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077] has failed, address is now gated for [5000] ms. Reason: [Association failed with [akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077]] Caused by: [Can't assign requested address]
+16/04/17 18:47:15 ERROR Worker: Connection to master failed! Waiting for master to reconnect...
+16/04/17 18:47:15 INFO Worker: Not spawning another attempt to register with the master, since there is an attempt scheduled already.
+16/04/17 18:47:15 WARN Worker: Failed to connect to master ZengDandeMacBook-Air.local:7077
+akka.actor.ActorNotFound: Actor not found for: ActorSelection[Anchor(akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077/), Path(/user/Master)]
+	at akka.actor.ActorSelection$$anonfun$resolveOne$1.apply(ActorSelection.scala:65)
+	at akka.actor.ActorSelection$$anonfun$resolveOne$1.apply(ActorSelection.scala:63)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$Batch.run(BatchingExecutor.scala:73)
+	at akka.dispatch.ExecutionContexts$sameThreadExecutionContext$.unbatchedExecute(Future.scala:74)
+	at akka.dispatch.BatchingExecutor$class.execute(BatchingExecutor.scala:120)
+	at akka.dispatch.ExecutionContexts$sameThreadExecutionContext$.execute(Future.scala:73)
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248)
+	at akka.pattern.PromiseActorRef.$bang(AskSupport.scala:266)
+	at akka.actor.EmptyLocalActorRef.specialHandle(ActorRef.scala:533)
+	at akka.actor.DeadLetterActorRef.specialHandle(ActorRef.scala:569)
+	at akka.actor.DeadLetterActorRef.$bang(ActorRef.scala:559)
+	at akka.remote.RemoteActorRefProvider$RemoteDeadLetterActorRef.$bang(RemoteActorRefProvider.scala:87)
+	at akka.remote.EndpointWriter.postStop(Endpoint.scala:557)
+	at akka.actor.Actor$class.aroundPostStop(Actor.scala:477)
+	at akka.remote.EndpointActor.aroundPostStop(Endpoint.scala:411)
+	at akka.actor.dungeon.FaultHandling$class.akka$actor$dungeon$FaultHandling$$finishTerminate(FaultHandling.scala:210)
+	at akka.actor.dungeon.FaultHandling$class.terminate(FaultHandling.scala:172)
+	at akka.actor.ActorCell.terminate(ActorCell.scala:369)
+	at akka.actor.ActorCell.invokeAll$1(ActorCell.scala:462)
+	at akka.actor.ActorCell.systemInvoke(ActorCell.scala:478)
+	at akka.dispatch.Mailbox.processAllSystemMessages(Mailbox.scala:263)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:219)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+16/04/17 18:47:20 INFO Worker: Retrying connection to master (attempt # 3)
+16/04/17 18:47:20 INFO Worker: Connecting to master ZengDandeMacBook-Air.local:7077...
+16/04/17 18:47:20 WARN Worker: Failed to connect to master ZengDandeMacBook-Air.local:7077
+akka.actor.ActorNotFound: Actor not found for: ActorSelection[Anchor(akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077/), Path(/user/Master)]
+	at akka.actor.ActorSelection$$anonfun$resolveOne$1.apply(ActorSelection.scala:65)
+	at akka.actor.ActorSelection$$anonfun$resolveOne$1.apply(ActorSelection.scala:63)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$Batch.run(BatchingExecutor.scala:73)
+	at akka.dispatch.ExecutionContexts$sameThreadExecutionContext$.unbatchedExecute(Future.scala:74)
+	at akka.dispatch.BatchingExecutor$class.execute(BatchingExecutor.scala:120)
+	at akka.dispatch.ExecutionContexts$sameThreadExecutionContext$.execute(Future.scala:73)
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248)
+	at akka.pattern.PromiseActorRef.$bang(AskSupport.scala:266)
+	at akka.actor.EmptyLocalActorRef.specialHandle(ActorRef.scala:533)
+	at akka.actor.DeadLetterActorRef.specialHandle(ActorRef.scala:569)
+	at akka.actor.DeadLetterActorRef.$bang(ActorRef.scala:559)
+	at akka.remote.RemoteActorRefProvider$RemoteDeadLetterActorRef.$bang(RemoteActorRefProvider.scala:87)
+	at akka.remote.ReliableDeliverySupervisor$$anonfun$gated$1.applyOrElse(Endpoint.scala:335)
+	at akka.actor.Actor$class.aroundReceive(Actor.scala:467)
+	at akka.remote.ReliableDeliverySupervisor.aroundReceive(Endpoint.scala:188)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:487)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:238)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:220)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+16/04/17 18:47:25 INFO Worker: Retrying connection to master (attempt # 4)
+16/04/17 18:47:25 INFO Worker: Connecting to master ZengDandeMacBook-Air.local:7077...
+16/04/17 18:47:25 INFO Worker: ZengDandeMacBook-Air.local:7077 Disassociated !
+16/04/17 18:47:25 WARN Worker: Failed to connect to master ZengDandeMacBook-Air.local:7077
+akka.actor.ActorNotFound: Actor not found for: ActorSelection[Anchor(akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077/), Path(/user/Master)]
+	at akka.actor.ActorSelection$$anonfun$resolveOne$1.apply(ActorSelection.scala:65)
+	at akka.actor.ActorSelection$$anonfun$resolveOne$1.apply(ActorSelection.scala:63)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$Batch.run(BatchingExecutor.scala:73)
+	at akka.dispatch.ExecutionContexts$sameThreadExecutionContext$.unbatchedExecute(Future.scala:74)
+	at akka.dispatch.BatchingExecutor$class.execute(BatchingExecutor.scala:120)
+	at akka.dispatch.ExecutionContexts$sameThreadExecutionContext$.execute(Future.scala:73)
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248)
+	at akka.pattern.PromiseActorRef.$bang(AskSupport.scala:266)
+	at akka.actor.EmptyLocalActorRef.specialHandle(ActorRef.scala:533)
+	at akka.actor.DeadLetterActorRef.specialHandle(ActorRef.scala:569)
+	at akka.actor.DeadLetterActorRef.$bang(ActorRef.scala:559)
+	at akka.remote.RemoteActorRefProvider$RemoteDeadLetterActorRef.$bang(RemoteActorRefProvider.scala:87)
+	at akka.remote.EndpointWriter.postStop(Endpoint.scala:557)
+	at akka.actor.Actor$class.aroundPostStop(Actor.scala:477)
+	at akka.remote.EndpointActor.aroundPostStop(Endpoint.scala:411)
+	at akka.actor.dungeon.FaultHandling$class.akka$actor$dungeon$FaultHandling$$finishTerminate(FaultHandling.scala:210)
+	at akka.actor.dungeon.FaultHandling$class.terminate(FaultHandling.scala:172)
+	at akka.actor.ActorCell.terminate(ActorCell.scala:369)
+	at akka.actor.ActorCell.invokeAll$1(ActorCell.scala:462)
+	at akka.actor.ActorCell.systemInvoke(ActorCell.scala:478)
+	at akka.dispatch.Mailbox.processAllSystemMessages(Mailbox.scala:263)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:219)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+16/04/17 18:47:25 WARN ReliableDeliverySupervisor: Association with remote system [akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077] has failed, address is now gated for [5000] ms. Reason: [Association failed with [akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077]] Caused by: [Can't assign requested address]
+16/04/17 18:47:25 ERROR Worker: Connection to master failed! Waiting for master to reconnect...
+16/04/17 18:47:25 INFO Worker: Not spawning another attempt to register with the master, since there is an attempt scheduled already.
+16/04/17 18:47:30 INFO Worker: Retrying connection to master (attempt # 5)
+16/04/17 18:47:30 INFO Worker: Connecting to master ZengDandeMacBook-Air.local:7077...
+16/04/17 18:47:30 WARN Worker: Failed to connect to master ZengDandeMacBook-Air.local:7077
+akka.actor.ActorNotFound: Actor not found for: ActorSelection[Anchor(akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077/), Path(/user/Master)]
+	at akka.actor.ActorSelection$$anonfun$resolveOne$1.apply(ActorSelection.scala:65)
+	at akka.actor.ActorSelection$$anonfun$resolveOne$1.apply(ActorSelection.scala:63)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$Batch.run(BatchingExecutor.scala:73)
+	at akka.dispatch.ExecutionContexts$sameThreadExecutionContext$.unbatchedExecute(Future.scala:74)
+	at akka.dispatch.BatchingExecutor$class.execute(BatchingExecutor.scala:120)
+	at akka.dispatch.ExecutionContexts$sameThreadExecutionContext$.execute(Future.scala:73)
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248)
+	at akka.pattern.PromiseActorRef.$bang(AskSupport.scala:266)
+	at akka.actor.EmptyLocalActorRef.specialHandle(ActorRef.scala:533)
+	at akka.actor.DeadLetterActorRef.specialHandle(ActorRef.scala:569)
+	at akka.actor.DeadLetterActorRef.$bang(ActorRef.scala:559)
+	at akka.remote.RemoteActorRefProvider$RemoteDeadLetterActorRef.$bang(RemoteActorRefProvider.scala:87)
+	at akka.remote.ReliableDeliverySupervisor$$anonfun$gated$1.applyOrElse(Endpoint.scala:335)
+	at akka.actor.Actor$class.aroundReceive(Actor.scala:467)
+	at akka.remote.ReliableDeliverySupervisor.aroundReceive(Endpoint.scala:188)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:487)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:238)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:220)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+16/04/17 18:47:35 INFO Worker: Retrying connection to master (attempt # 6)
+16/04/17 18:47:35 INFO Worker: Connecting to master ZengDandeMacBook-Air.local:7077...
+16/04/17 18:47:35 INFO Worker: ZengDandeMacBook-Air.local:7077 Disassociated !
+16/04/17 18:47:35 WARN ReliableDeliverySupervisor: Association with remote system [akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077] has failed, address is now gated for [5000] ms. Reason: [Association failed with [akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077]] Caused by: [Can't assign requested address]
+16/04/17 18:47:35 ERROR Worker: Connection to master failed! Waiting for master to reconnect...
+16/04/17 18:47:35 INFO Worker: Not spawning another attempt to register with the master, since there is an attempt scheduled already.
+16/04/17 18:47:35 WARN Worker: Failed to connect to master ZengDandeMacBook-Air.local:7077
+akka.actor.ActorNotFound: Actor not found for: ActorSelection[Anchor(akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077/), Path(/user/Master)]
+	at akka.actor.ActorSelection$$anonfun$resolveOne$1.apply(ActorSelection.scala:65)
+	at akka.actor.ActorSelection$$anonfun$resolveOne$1.apply(ActorSelection.scala:63)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$Batch.run(BatchingExecutor.scala:73)
+	at akka.dispatch.ExecutionContexts$sameThreadExecutionContext$.unbatchedExecute(Future.scala:74)
+	at akka.dispatch.BatchingExecutor$class.execute(BatchingExecutor.scala:120)
+	at akka.dispatch.ExecutionContexts$sameThreadExecutionContext$.execute(Future.scala:73)
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248)
+	at akka.pattern.PromiseActorRef.$bang(AskSupport.scala:266)
+	at akka.actor.EmptyLocalActorRef.specialHandle(ActorRef.scala:533)
+	at akka.actor.DeadLetterActorRef.specialHandle(ActorRef.scala:569)
+	at akka.actor.DeadLetterActorRef.$bang(ActorRef.scala:559)
+	at akka.remote.RemoteActorRefProvider$RemoteDeadLetterActorRef.$bang(RemoteActorRefProvider.scala:87)
+	at akka.remote.EndpointWriter.postStop(Endpoint.scala:557)
+	at akka.actor.Actor$class.aroundPostStop(Actor.scala:477)
+	at akka.remote.EndpointActor.aroundPostStop(Endpoint.scala:411)
+	at akka.actor.dungeon.FaultHandling$class.akka$actor$dungeon$FaultHandling$$finishTerminate(FaultHandling.scala:210)
+	at akka.actor.dungeon.FaultHandling$class.terminate(FaultHandling.scala:172)
+	at akka.actor.ActorCell.terminate(ActorCell.scala:369)
+	at akka.actor.ActorCell.invokeAll$1(ActorCell.scala:462)
+	at akka.actor.ActorCell.systemInvoke(ActorCell.scala:478)
+	at akka.dispatch.Mailbox.processAllSystemMessages(Mailbox.scala:263)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:219)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+16/04/17 18:48:07 INFO Worker: Retrying connection to master (attempt # 7)
+16/04/17 18:48:07 INFO Worker: Connecting to master ZengDandeMacBook-Air.local:7077...
+16/04/17 18:48:07 WARN Worker: Failed to connect to master ZengDandeMacBook-Air.local:7077
+akka.actor.ActorNotFound: Actor not found for: ActorSelection[Anchor(akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077/), Path(/user/Master)]
+	at akka.actor.ActorSelection$$anonfun$resolveOne$1.apply(ActorSelection.scala:65)
+	at akka.actor.ActorSelection$$anonfun$resolveOne$1.apply(ActorSelection.scala:63)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$Batch.run(BatchingExecutor.scala:73)
+	at akka.dispatch.ExecutionContexts$sameThreadExecutionContext$.unbatchedExecute(Future.scala:74)
+	at akka.dispatch.BatchingExecutor$class.execute(BatchingExecutor.scala:120)
+	at akka.dispatch.ExecutionContexts$sameThreadExecutionContext$.execute(Future.scala:73)
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248)
+	at akka.pattern.PromiseActorRef.$bang(AskSupport.scala:266)
+	at akka.actor.EmptyLocalActorRef.specialHandle(ActorRef.scala:533)
+	at akka.actor.DeadLetterActorRef.specialHandle(ActorRef.scala:569)
+	at akka.actor.DeadLetterActorRef.$bang(ActorRef.scala:559)
+	at akka.remote.RemoteActorRefProvider$RemoteDeadLetterActorRef.$bang(RemoteActorRefProvider.scala:87)
+	at akka.remote.EndpointWriter.postStop(Endpoint.scala:557)
+	at akka.actor.Actor$class.aroundPostStop(Actor.scala:477)
+	at akka.remote.EndpointActor.aroundPostStop(Endpoint.scala:411)
+	at akka.actor.dungeon.FaultHandling$class.akka$actor$dungeon$FaultHandling$$finishTerminate(FaultHandling.scala:210)
+	at akka.actor.dungeon.FaultHandling$class.terminate(FaultHandling.scala:172)
+	at akka.actor.ActorCell.terminate(ActorCell.scala:369)
+	at akka.actor.ActorCell.invokeAll$1(ActorCell.scala:462)
+	at akka.actor.ActorCell.systemInvoke(ActorCell.scala:478)
+	at akka.dispatch.Mailbox.processAllSystemMessages(Mailbox.scala:263)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:219)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+16/04/17 18:48:07 WARN ReliableDeliverySupervisor: Association with remote system [akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077] has failed, address is now gated for [5000] ms. Reason: [Association failed with [akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077]] Caused by: [Connection refused: ZengDandeMacBook-Air.local/10.30.5.16:7077]
+16/04/17 18:48:07 INFO Worker: ZengDandeMacBook-Air.local:7077 Disassociated !
+16/04/17 18:48:07 ERROR Worker: Connection to master failed! Waiting for master to reconnect...
+16/04/17 18:48:07 INFO Worker: Not spawning another attempt to register with the master, since there is an attempt scheduled already.
+16/04/17 18:48:39 INFO Worker: Retrying connection to master (attempt # 8)
+16/04/17 18:48:39 INFO Worker: Connecting to master ZengDandeMacBook-Air.local:7077...
+16/04/17 18:48:39 INFO Worker: ZengDandeMacBook-Air.local:7077 Disassociated !
+16/04/17 18:48:39 ERROR Worker: Connection to master failed! Waiting for master to reconnect...
+16/04/17 18:48:39 WARN ReliableDeliverySupervisor: Association with remote system [akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077] has failed, address is now gated for [5000] ms. Reason: [Association failed with [akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077]] Caused by: [Connection refused: ZengDandeMacBook-Air.local/10.30.5.16:7077]
+16/04/17 18:48:39 INFO Worker: Not spawning another attempt to register with the master, since there is an attempt scheduled already.
+16/04/17 18:48:39 WARN Worker: Failed to connect to master ZengDandeMacBook-Air.local:7077
+akka.actor.ActorNotFound: Actor not found for: ActorSelection[Anchor(akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077/), Path(/user/Master)]
+	at akka.actor.ActorSelection$$anonfun$resolveOne$1.apply(ActorSelection.scala:65)
+	at akka.actor.ActorSelection$$anonfun$resolveOne$1.apply(ActorSelection.scala:63)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$Batch.run(BatchingExecutor.scala:73)
+	at akka.dispatch.ExecutionContexts$sameThreadExecutionContext$.unbatchedExecute(Future.scala:74)
+	at akka.dispatch.BatchingExecutor$class.execute(BatchingExecutor.scala:120)
+	at akka.dispatch.ExecutionContexts$sameThreadExecutionContext$.execute(Future.scala:73)
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248)
+	at akka.pattern.PromiseActorRef.$bang(AskSupport.scala:266)
+	at akka.actor.EmptyLocalActorRef.specialHandle(ActorRef.scala:533)
+	at akka.actor.DeadLetterActorRef.specialHandle(ActorRef.scala:569)
+	at akka.actor.DeadLetterActorRef.$bang(ActorRef.scala:559)
+	at akka.remote.RemoteActorRefProvider$RemoteDeadLetterActorRef.$bang(RemoteActorRefProvider.scala:87)
+	at akka.remote.EndpointWriter.postStop(Endpoint.scala:557)
+	at akka.actor.Actor$class.aroundPostStop(Actor.scala:477)
+	at akka.remote.EndpointActor.aroundPostStop(Endpoint.scala:411)
+	at akka.actor.dungeon.FaultHandling$class.akka$actor$dungeon$FaultHandling$$finishTerminate(FaultHandling.scala:210)
+	at akka.actor.dungeon.FaultHandling$class.terminate(FaultHandling.scala:172)
+	at akka.actor.ActorCell.terminate(ActorCell.scala:369)
+	at akka.actor.ActorCell.invokeAll$1(ActorCell.scala:462)
+	at akka.actor.ActorCell.systemInvoke(ActorCell.scala:478)
+	at akka.dispatch.Mailbox.processAllSystemMessages(Mailbox.scala:263)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:219)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+16/04/17 18:49:11 INFO Worker: Retrying connection to master (attempt # 9)
+16/04/17 18:49:11 INFO Worker: Connecting to master ZengDandeMacBook-Air.local:7077...
+16/04/17 18:49:11 WARN ReliableDeliverySupervisor: Association with remote system [akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077] has failed, address is now gated for [5000] ms. Reason: [Association failed with [akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077]] Caused by: [Connection refused: ZengDandeMacBook-Air.local/10.30.5.16:7077]
+16/04/17 18:49:11 WARN Worker: Failed to connect to master ZengDandeMacBook-Air.local:7077
+akka.actor.ActorNotFound: Actor not found for: ActorSelection[Anchor(akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077/), Path(/user/Master)]
+	at akka.actor.ActorSelection$$anonfun$resolveOne$1.apply(ActorSelection.scala:65)
+	at akka.actor.ActorSelection$$anonfun$resolveOne$1.apply(ActorSelection.scala:63)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$Batch.run(BatchingExecutor.scala:73)
+	at akka.dispatch.ExecutionContexts$sameThreadExecutionContext$.unbatchedExecute(Future.scala:74)
+	at akka.dispatch.BatchingExecutor$class.execute(BatchingExecutor.scala:120)
+	at akka.dispatch.ExecutionContexts$sameThreadExecutionContext$.execute(Future.scala:73)
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248)
+	at akka.pattern.PromiseActorRef.$bang(AskSupport.scala:266)
+	at akka.actor.EmptyLocalActorRef.specialHandle(ActorRef.scala:533)
+	at akka.actor.DeadLetterActorRef.specialHandle(ActorRef.scala:569)
+	at akka.actor.DeadLetterActorRef.$bang(ActorRef.scala:559)
+	at akka.remote.RemoteActorRefProvider$RemoteDeadLetterActorRef.$bang(RemoteActorRefProvider.scala:87)
+	at akka.remote.EndpointWriter.postStop(Endpoint.scala:557)
+	at akka.actor.Actor$class.aroundPostStop(Actor.scala:477)
+	at akka.remote.EndpointActor.aroundPostStop(Endpoint.scala:411)
+	at akka.actor.dungeon.FaultHandling$class.akka$actor$dungeon$FaultHandling$$finishTerminate(FaultHandling.scala:210)
+	at akka.actor.dungeon.FaultHandling$class.terminate(FaultHandling.scala:172)
+	at akka.actor.ActorCell.terminate(ActorCell.scala:369)
+	at akka.actor.ActorCell.invokeAll$1(ActorCell.scala:462)
+	at akka.actor.ActorCell.systemInvoke(ActorCell.scala:478)
+	at akka.dispatch.Mailbox.processAllSystemMessages(Mailbox.scala:263)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:219)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+16/04/17 18:49:11 INFO Worker: ZengDandeMacBook-Air.local:7077 Disassociated !
+16/04/17 18:49:11 ERROR Worker: Connection to master failed! Waiting for master to reconnect...
+16/04/17 18:49:11 INFO Worker: Not spawning another attempt to register with the master, since there is an attempt scheduled already.
+16/04/17 18:49:43 INFO Worker: Retrying connection to master (attempt # 10)
+16/04/17 18:49:43 INFO Worker: Connecting to master ZengDandeMacBook-Air.local:7077...
+16/04/17 18:49:43 WARN ReliableDeliverySupervisor: Association with remote system [akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077] has failed, address is now gated for [5000] ms. Reason: [Association failed with [akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077]] Caused by: [Connection refused: ZengDandeMacBook-Air.local/10.30.5.16:7077]
+16/04/17 18:49:43 WARN Worker: Failed to connect to master ZengDandeMacBook-Air.local:7077
+akka.actor.ActorNotFound: Actor not found for: ActorSelection[Anchor(akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077/), Path(/user/Master)]
+	at akka.actor.ActorSelection$$anonfun$resolveOne$1.apply(ActorSelection.scala:65)
+	at akka.actor.ActorSelection$$anonfun$resolveOne$1.apply(ActorSelection.scala:63)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$Batch.run(BatchingExecutor.scala:73)
+	at akka.dispatch.ExecutionContexts$sameThreadExecutionContext$.unbatchedExecute(Future.scala:74)
+	at akka.dispatch.BatchingExecutor$class.execute(BatchingExecutor.scala:120)
+	at akka.dispatch.ExecutionContexts$sameThreadExecutionContext$.execute(Future.scala:73)
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248)
+	at akka.pattern.PromiseActorRef.$bang(AskSupport.scala:266)
+	at akka.actor.EmptyLocalActorRef.specialHandle(ActorRef.scala:533)
+	at akka.actor.DeadLetterActorRef.specialHandle(ActorRef.scala:569)
+	at akka.actor.DeadLetterActorRef.$bang(ActorRef.scala:559)
+	at akka.remote.RemoteActorRefProvider$RemoteDeadLetterActorRef.$bang(RemoteActorRefProvider.scala:87)
+	at akka.remote.EndpointWriter.postStop(Endpoint.scala:557)
+	at akka.actor.Actor$class.aroundPostStop(Actor.scala:477)
+	at akka.remote.EndpointActor.aroundPostStop(Endpoint.scala:411)
+	at akka.actor.dungeon.FaultHandling$class.akka$actor$dungeon$FaultHandling$$finishTerminate(FaultHandling.scala:210)
+	at akka.actor.dungeon.FaultHandling$class.terminate(FaultHandling.scala:172)
+	at akka.actor.ActorCell.terminate(ActorCell.scala:369)
+	at akka.actor.ActorCell.invokeAll$1(ActorCell.scala:462)
+	at akka.actor.ActorCell.systemInvoke(ActorCell.scala:478)
+	at akka.dispatch.Mailbox.processAllSystemMessages(Mailbox.scala:263)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:219)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+16/04/17 18:49:43 INFO Worker: ZengDandeMacBook-Air.local:7077 Disassociated !
+16/04/17 18:49:43 ERROR Worker: Connection to master failed! Waiting for master to reconnect...
+16/04/17 18:49:43 INFO Worker: Not spawning another attempt to register with the master, since there is an attempt scheduled already.
+16/04/17 18:50:15 INFO Worker: Retrying connection to master (attempt # 11)
+16/04/17 18:50:15 INFO Worker: Connecting to master ZengDandeMacBook-Air.local:7077...
+16/04/17 18:50:15 INFO Worker: ZengDandeMacBook-Air.local:7077 Disassociated !
+16/04/17 18:50:15 WARN ReliableDeliverySupervisor: Association with remote system [akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077] has failed, address is now gated for [5000] ms. Reason: [Association failed with [akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077]] Caused by: [Connection refused: ZengDandeMacBook-Air.local/10.30.5.16:7077]
+16/04/17 18:50:15 ERROR Worker: Connection to master failed! Waiting for master to reconnect...
+16/04/17 18:50:15 INFO Worker: Not spawning another attempt to register with the master, since there is an attempt scheduled already.
+16/04/17 18:50:15 WARN Worker: Failed to connect to master ZengDandeMacBook-Air.local:7077
+akka.actor.ActorNotFound: Actor not found for: ActorSelection[Anchor(akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077/), Path(/user/Master)]
+	at akka.actor.ActorSelection$$anonfun$resolveOne$1.apply(ActorSelection.scala:65)
+	at akka.actor.ActorSelection$$anonfun$resolveOne$1.apply(ActorSelection.scala:63)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$Batch.run(BatchingExecutor.scala:73)
+	at akka.dispatch.ExecutionContexts$sameThreadExecutionContext$.unbatchedExecute(Future.scala:74)
+	at akka.dispatch.BatchingExecutor$class.execute(BatchingExecutor.scala:120)
+	at akka.dispatch.ExecutionContexts$sameThreadExecutionContext$.execute(Future.scala:73)
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248)
+	at akka.pattern.PromiseActorRef.$bang(AskSupport.scala:266)
+	at akka.actor.EmptyLocalActorRef.specialHandle(ActorRef.scala:533)
+	at akka.actor.DeadLetterActorRef.specialHandle(ActorRef.scala:569)
+	at akka.actor.DeadLetterActorRef.$bang(ActorRef.scala:559)
+	at akka.remote.RemoteActorRefProvider$RemoteDeadLetterActorRef.$bang(RemoteActorRefProvider.scala:87)
+	at akka.remote.EndpointWriter.postStop(Endpoint.scala:557)
+	at akka.actor.Actor$class.aroundPostStop(Actor.scala:477)
+	at akka.remote.EndpointActor.aroundPostStop(Endpoint.scala:411)
+	at akka.actor.dungeon.FaultHandling$class.akka$actor$dungeon$FaultHandling$$finishTerminate(FaultHandling.scala:210)
+	at akka.actor.dungeon.FaultHandling$class.terminate(FaultHandling.scala:172)
+	at akka.actor.ActorCell.terminate(ActorCell.scala:369)
+	at akka.actor.ActorCell.invokeAll$1(ActorCell.scala:462)
+	at akka.actor.ActorCell.systemInvoke(ActorCell.scala:478)
+	at akka.dispatch.Mailbox.processAllSystemMessages(Mailbox.scala:263)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:219)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+16/04/17 18:50:47 INFO Worker: Retrying connection to master (attempt # 12)
+16/04/17 18:50:47 INFO Worker: Connecting to master ZengDandeMacBook-Air.local:7077...
+16/04/17 18:50:47 INFO Worker: ZengDandeMacBook-Air.local:7077 Disassociated !
+16/04/17 18:50:47 WARN ReliableDeliverySupervisor: Association with remote system [akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077] has failed, address is now gated for [5000] ms. Reason: [Association failed with [akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077]] Caused by: [Connection refused: ZengDandeMacBook-Air.local/10.30.5.16:7077]
+16/04/17 18:50:47 WARN Worker: Failed to connect to master ZengDandeMacBook-Air.local:7077
+akka.actor.ActorNotFound: Actor not found for: ActorSelection[Anchor(akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077/), Path(/user/Master)]
+	at akka.actor.ActorSelection$$anonfun$resolveOne$1.apply(ActorSelection.scala:65)
+	at akka.actor.ActorSelection$$anonfun$resolveOne$1.apply(ActorSelection.scala:63)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$Batch.run(BatchingExecutor.scala:73)
+	at akka.dispatch.ExecutionContexts$sameThreadExecutionContext$.unbatchedExecute(Future.scala:74)
+	at akka.dispatch.BatchingExecutor$class.execute(BatchingExecutor.scala:120)
+	at akka.dispatch.ExecutionContexts$sameThreadExecutionContext$.execute(Future.scala:73)
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248)
+	at akka.pattern.PromiseActorRef.$bang(AskSupport.scala:266)
+	at akka.actor.EmptyLocalActorRef.specialHandle(ActorRef.scala:533)
+	at akka.actor.DeadLetterActorRef.specialHandle(ActorRef.scala:569)
+	at akka.actor.DeadLetterActorRef.$bang(ActorRef.scala:559)
+	at akka.remote.RemoteActorRefProvider$RemoteDeadLetterActorRef.$bang(RemoteActorRefProvider.scala:87)
+	at akka.remote.EndpointWriter.postStop(Endpoint.scala:557)
+	at akka.actor.Actor$class.aroundPostStop(Actor.scala:477)
+	at akka.remote.EndpointActor.aroundPostStop(Endpoint.scala:411)
+	at akka.actor.dungeon.FaultHandling$class.akka$actor$dungeon$FaultHandling$$finishTerminate(FaultHandling.scala:210)
+	at akka.actor.dungeon.FaultHandling$class.terminate(FaultHandling.scala:172)
+	at akka.actor.ActorCell.terminate(ActorCell.scala:369)
+	at akka.actor.ActorCell.invokeAll$1(ActorCell.scala:462)
+	at akka.actor.ActorCell.systemInvoke(ActorCell.scala:478)
+	at akka.dispatch.Mailbox.processAllSystemMessages(Mailbox.scala:263)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:219)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+16/04/17 18:50:47 ERROR Worker: Connection to master failed! Waiting for master to reconnect...
+16/04/17 18:50:47 INFO Worker: Not spawning another attempt to register with the master, since there is an attempt scheduled already.
+16/04/17 18:51:19 INFO Worker: Retrying connection to master (attempt # 13)
+16/04/17 18:51:19 INFO Worker: Connecting to master ZengDandeMacBook-Air.local:7077...
+16/04/17 18:51:20 INFO Worker: ZengDandeMacBook-Air.local:7077 Disassociated !
+16/04/17 18:51:20 WARN ReliableDeliverySupervisor: Association with remote system [akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077] has failed, address is now gated for [5000] ms. Reason: [Association failed with [akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077]] Caused by: [Connection refused: ZengDandeMacBook-Air.local/10.30.5.16:7077]
+16/04/17 18:51:20 WARN Worker: Failed to connect to master ZengDandeMacBook-Air.local:7077
+akka.actor.ActorNotFound: Actor not found for: ActorSelection[Anchor(akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077/), Path(/user/Master)]
+	at akka.actor.ActorSelection$$anonfun$resolveOne$1.apply(ActorSelection.scala:65)
+	at akka.actor.ActorSelection$$anonfun$resolveOne$1.apply(ActorSelection.scala:63)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$Batch.run(BatchingExecutor.scala:73)
+	at akka.dispatch.ExecutionContexts$sameThreadExecutionContext$.unbatchedExecute(Future.scala:74)
+	at akka.dispatch.BatchingExecutor$class.execute(BatchingExecutor.scala:120)
+	at akka.dispatch.ExecutionContexts$sameThreadExecutionContext$.execute(Future.scala:73)
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248)
+	at akka.pattern.PromiseActorRef.$bang(AskSupport.scala:266)
+	at akka.actor.EmptyLocalActorRef.specialHandle(ActorRef.scala:533)
+	at akka.actor.DeadLetterActorRef.specialHandle(ActorRef.scala:569)
+	at akka.actor.DeadLetterActorRef.$bang(ActorRef.scala:559)
+	at akka.remote.RemoteActorRefProvider$RemoteDeadLetterActorRef.$bang(RemoteActorRefProvider.scala:87)
+	at akka.remote.EndpointWriter.postStop(Endpoint.scala:557)
+	at akka.actor.Actor$class.aroundPostStop(Actor.scala:477)
+	at akka.remote.EndpointActor.aroundPostStop(Endpoint.scala:411)
+	at akka.actor.dungeon.FaultHandling$class.akka$actor$dungeon$FaultHandling$$finishTerminate(FaultHandling.scala:210)
+	at akka.actor.dungeon.FaultHandling$class.terminate(FaultHandling.scala:172)
+	at akka.actor.ActorCell.terminate(ActorCell.scala:369)
+	at akka.actor.ActorCell.invokeAll$1(ActorCell.scala:462)
+	at akka.actor.ActorCell.systemInvoke(ActorCell.scala:478)
+	at akka.dispatch.Mailbox.processAllSystemMessages(Mailbox.scala:263)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:219)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+16/04/17 18:51:20 ERROR Worker: Connection to master failed! Waiting for master to reconnect...
+16/04/17 18:51:20 INFO Worker: Not spawning another attempt to register with the master, since there is an attempt scheduled already.
+16/04/17 18:51:51 INFO Worker: Retrying connection to master (attempt # 14)
+16/04/17 18:51:51 INFO Worker: Connecting to master ZengDandeMacBook-Air.local:7077...
+16/04/17 18:51:51 WARN ReliableDeliverySupervisor: Association with remote system [akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077] has failed, address is now gated for [5000] ms. Reason: [Association failed with [akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077]] Caused by: [Connection refused: ZengDandeMacBook-Air.local/10.30.5.16:7077]
+16/04/17 18:51:51 WARN Worker: Failed to connect to master ZengDandeMacBook-Air.local:7077
+akka.actor.ActorNotFound: Actor not found for: ActorSelection[Anchor(akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077/), Path(/user/Master)]
+	at akka.actor.ActorSelection$$anonfun$resolveOne$1.apply(ActorSelection.scala:65)
+	at akka.actor.ActorSelection$$anonfun$resolveOne$1.apply(ActorSelection.scala:63)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$Batch.run(BatchingExecutor.scala:73)
+	at akka.dispatch.ExecutionContexts$sameThreadExecutionContext$.unbatchedExecute(Future.scala:74)
+	at akka.dispatch.BatchingExecutor$class.execute(BatchingExecutor.scala:120)
+	at akka.dispatch.ExecutionContexts$sameThreadExecutionContext$.execute(Future.scala:73)
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248)
+	at akka.pattern.PromiseActorRef.$bang(AskSupport.scala:266)
+	at akka.actor.EmptyLocalActorRef.specialHandle(ActorRef.scala:533)
+	at akka.actor.DeadLetterActorRef.specialHandle(ActorRef.scala:569)
+	at akka.actor.DeadLetterActorRef.$bang(ActorRef.scala:559)
+	at akka.remote.RemoteActorRefProvider$RemoteDeadLetterActorRef.$bang(RemoteActorRefProvider.scala:87)
+	at akka.remote.EndpointWriter.postStop(Endpoint.scala:557)
+	at akka.actor.Actor$class.aroundPostStop(Actor.scala:477)
+	at akka.remote.EndpointActor.aroundPostStop(Endpoint.scala:411)
+	at akka.actor.dungeon.FaultHandling$class.akka$actor$dungeon$FaultHandling$$finishTerminate(FaultHandling.scala:210)
+	at akka.actor.dungeon.FaultHandling$class.terminate(FaultHandling.scala:172)
+	at akka.actor.ActorCell.terminate(ActorCell.scala:369)
+	at akka.actor.ActorCell.invokeAll$1(ActorCell.scala:462)
+	at akka.actor.ActorCell.systemInvoke(ActorCell.scala:478)
+	at akka.dispatch.Mailbox.processAllSystemMessages(Mailbox.scala:263)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:219)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+16/04/17 18:51:51 INFO Worker: ZengDandeMacBook-Air.local:7077 Disassociated !
+16/04/17 18:51:51 ERROR Worker: Connection to master failed! Waiting for master to reconnect...
+16/04/17 18:51:51 INFO Worker: Not spawning another attempt to register with the master, since there is an attempt scheduled already.
+16/04/17 18:52:23 INFO Worker: Retrying connection to master (attempt # 15)
+16/04/17 18:52:23 INFO Worker: Connecting to master ZengDandeMacBook-Air.local:7077...
+16/04/17 18:52:23 WARN ReliableDeliverySupervisor: Association with remote system [akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077] has failed, address is now gated for [5000] ms. Reason: [Association failed with [akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077]] Caused by: [Connection refused: ZengDandeMacBook-Air.local/10.30.5.16:7077]
+16/04/17 18:52:23 WARN Worker: Failed to connect to master ZengDandeMacBook-Air.local:7077
+akka.actor.ActorNotFound: Actor not found for: ActorSelection[Anchor(akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077/), Path(/user/Master)]
+	at akka.actor.ActorSelection$$anonfun$resolveOne$1.apply(ActorSelection.scala:65)
+	at akka.actor.ActorSelection$$anonfun$resolveOne$1.apply(ActorSelection.scala:63)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$Batch.run(BatchingExecutor.scala:73)
+	at akka.dispatch.ExecutionContexts$sameThreadExecutionContext$.unbatchedExecute(Future.scala:74)
+	at akka.dispatch.BatchingExecutor$class.execute(BatchingExecutor.scala:120)
+	at akka.dispatch.ExecutionContexts$sameThreadExecutionContext$.execute(Future.scala:73)
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248)
+	at akka.pattern.PromiseActorRef.$bang(AskSupport.scala:266)
+	at akka.actor.EmptyLocalActorRef.specialHandle(ActorRef.scala:533)
+	at akka.actor.DeadLetterActorRef.specialHandle(ActorRef.scala:569)
+	at akka.actor.DeadLetterActorRef.$bang(ActorRef.scala:559)
+	at akka.remote.RemoteActorRefProvider$RemoteDeadLetterActorRef.$bang(RemoteActorRefProvider.scala:87)
+	at akka.remote.EndpointWriter.postStop(Endpoint.scala:557)
+	at akka.actor.Actor$class.aroundPostStop(Actor.scala:477)
+	at akka.remote.EndpointActor.aroundPostStop(Endpoint.scala:411)
+	at akka.actor.dungeon.FaultHandling$class.akka$actor$dungeon$FaultHandling$$finishTerminate(FaultHandling.scala:210)
+	at akka.actor.dungeon.FaultHandling$class.terminate(FaultHandling.scala:172)
+	at akka.actor.ActorCell.terminate(ActorCell.scala:369)
+	at akka.actor.ActorCell.invokeAll$1(ActorCell.scala:462)
+	at akka.actor.ActorCell.systemInvoke(ActorCell.scala:478)
+	at akka.dispatch.Mailbox.processAllSystemMessages(Mailbox.scala:263)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:219)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+16/04/17 18:52:23 INFO Worker: ZengDandeMacBook-Air.local:7077 Disassociated !
+16/04/17 18:52:23 ERROR Worker: Connection to master failed! Waiting for master to reconnect...
+16/04/17 18:52:23 INFO Worker: Not spawning another attempt to register with the master, since there is an attempt scheduled already.
+16/04/17 18:52:55 INFO Worker: Retrying connection to master (attempt # 16)
+16/04/17 18:52:55 INFO Worker: Connecting to master ZengDandeMacBook-Air.local:7077...
+16/04/17 18:52:55 WARN ReliableDeliverySupervisor: Association with remote system [akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077] has failed, address is now gated for [5000] ms. Reason: [Association failed with [akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077]] Caused by: [Connection refused: ZengDandeMacBook-Air.local/10.30.5.16:7077]
+16/04/17 18:52:55 WARN Worker: Failed to connect to master ZengDandeMacBook-Air.local:7077
+akka.actor.ActorNotFound: Actor not found for: ActorSelection[Anchor(akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077/), Path(/user/Master)]
+	at akka.actor.ActorSelection$$anonfun$resolveOne$1.apply(ActorSelection.scala:65)
+	at akka.actor.ActorSelection$$anonfun$resolveOne$1.apply(ActorSelection.scala:63)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$Batch.run(BatchingExecutor.scala:73)
+	at akka.dispatch.ExecutionContexts$sameThreadExecutionContext$.unbatchedExecute(Future.scala:74)
+	at akka.dispatch.BatchingExecutor$class.execute(BatchingExecutor.scala:120)
+	at akka.dispatch.ExecutionContexts$sameThreadExecutionContext$.execute(Future.scala:73)
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248)
+	at akka.pattern.PromiseActorRef.$bang(AskSupport.scala:266)
+	at akka.actor.EmptyLocalActorRef.specialHandle(ActorRef.scala:533)
+	at akka.actor.DeadLetterActorRef.specialHandle(ActorRef.scala:569)
+	at akka.actor.DeadLetterActorRef.$bang(ActorRef.scala:559)
+	at akka.remote.RemoteActorRefProvider$RemoteDeadLetterActorRef.$bang(RemoteActorRefProvider.scala:87)
+	at akka.remote.EndpointWriter.postStop(Endpoint.scala:557)
+	at akka.actor.Actor$class.aroundPostStop(Actor.scala:477)
+	at akka.remote.EndpointActor.aroundPostStop(Endpoint.scala:411)
+	at akka.actor.dungeon.FaultHandling$class.akka$actor$dungeon$FaultHandling$$finishTerminate(FaultHandling.scala:210)
+	at akka.actor.dungeon.FaultHandling$class.terminate(FaultHandling.scala:172)
+	at akka.actor.ActorCell.terminate(ActorCell.scala:369)
+	at akka.actor.ActorCell.invokeAll$1(ActorCell.scala:462)
+	at akka.actor.ActorCell.systemInvoke(ActorCell.scala:478)
+	at akka.dispatch.Mailbox.processAllSystemMessages(Mailbox.scala:263)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:219)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+16/04/17 18:52:55 INFO Worker: ZengDandeMacBook-Air.local:7077 Disassociated !
+16/04/17 18:52:55 ERROR Worker: Connection to master failed! Waiting for master to reconnect...
+16/04/17 18:52:55 INFO Worker: Not spawning another attempt to register with the master, since there is an attempt scheduled already.
+16/04/17 18:53:27 ERROR Worker: All masters are unresponsive! Giving up.

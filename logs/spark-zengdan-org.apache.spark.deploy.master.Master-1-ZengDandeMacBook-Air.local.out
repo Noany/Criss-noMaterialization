@@ -1,0 +1,26 @@
+Spark Command: /Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home/bin/java -cp /Users/zengdan/spark-1.5.1/sbin/../conf/:/Users/zengdan/spark-1.5.1/assembly/target/scala-2.10/spark-assembly-1.5.1-hadoop2.2.0.jar:/Users/zengdan/spark-1.5.1/lib_managed/jars/datanucleus-api-jdo-3.2.6.jar:/Users/zengdan/spark-1.5.1/lib_managed/jars/datanucleus-core-3.2.10.jar:/Users/zengdan/spark-1.5.1/lib_managed/jars/datanucleus-rdbms-3.2.9.jar -Xms1g -Xmx1g -XX:MaxPermSize=256m org.apache.spark.deploy.master.Master --ip ZengDandeMacBook-Air.local --port 7077 --webui-port 8080
+========================================
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+16/04/17 13:32:48 INFO Master: Registered signal handlers for [TERM, HUP, INT]
+16/04/17 13:32:49 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16/04/17 13:32:49 INFO SecurityManager: Changing view acls to: zengdan
+16/04/17 13:32:49 INFO SecurityManager: Changing modify acls to: zengdan
+16/04/17 13:32:49 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(zengdan); users with modify permissions: Set(zengdan)
+16/04/17 13:32:50 INFO Slf4jLogger: Slf4jLogger started
+16/04/17 13:32:50 INFO Remoting: Starting remoting
+16/04/17 13:32:50 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkMaster@ZengDandeMacBook-Air.local:7077]
+16/04/17 13:32:50 INFO Utils: Successfully started service 'sparkMaster' on port 7077.
+16/04/17 13:32:51 INFO Master: Starting Spark master at spark://ZengDandeMacBook-Air.local:7077
+16/04/17 13:32:51 INFO Master: Running Spark version 1.5.1
+16/04/17 13:32:51 INFO Utils: Successfully started service 'MasterUI' on port 8080.
+16/04/17 13:32:51 INFO MasterWebUI: Started MasterWebUI at http://192.168.1.103:8080
+16/04/17 13:32:51 INFO Utils: Successfully started service on port 6066.
+16/04/17 13:32:51 INFO StandaloneRestServer: Started REST server for submitting applications on port 6066
+16/04/17 13:32:51 INFO Master: I have been elected leader! New state: ALIVE
+16/04/17 13:32:53 INFO Master: Registering worker 192.168.1.103:54513 with 4 cores, 3.0 GB RAM
+16/04/17 18:47:07 WARN Master: Removing worker-20160417133252-192.168.1.103-54513 because we got no heartbeat in 60 seconds
+16/04/17 18:47:07 INFO Master: Removing worker worker-20160417133252-192.168.1.103-54513 on 192.168.1.103:54513
+16/04/17 18:50:27 INFO Master: 192.168.1.103:54513 got disassociated, removing it.
+16/04/17 18:50:27 WARN ReliableDeliverySupervisor: Association with remote system [akka.tcp://sparkWorker@192.168.1.103:54513] has failed, address is now gated for [5000] ms. Reason: [Disassociated] 
+16/04/17 18:50:27 INFO Master: 192.168.1.103:54513 got disassociated, removing it.
+16/04/17 22:49:51 ERROR Master: RECEIVED SIGNAL 15: SIGTERM
